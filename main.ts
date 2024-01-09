@@ -1,7 +1,8 @@
 let odleglosc = 0
-maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CW, 30)
-maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 30)
-basic.forever(function () {
+basic.forever(function on_forever() {
+    
+    maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CW, 30)
+    maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 30)
     odleglosc = maqueen.sensor(PingUnit.Centimeters)
     if (odleglosc >= 10) {
         maqueen.motorStop(maqueen.aMotors.M1)
@@ -11,4 +12,5 @@ basic.forever(function () {
         music.playTone(262, music.beat(BeatFraction.Whole))
         basic.pause(500)
     }
+    
 })
