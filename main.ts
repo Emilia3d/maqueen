@@ -1,6 +1,5 @@
 let odleglosc = 0
-basic.forever(function on_forever() {
-    
+basic.forever(function () {
     maqueen.MotorRun(maqueen.aMotors.M1, maqueen.Dir.CW, 30)
     maqueen.MotorRun(maqueen.aMotors.M2, maqueen.Dir.CW, 30)
     odleglosc = maqueen.sensor(PingUnit.Centimeters)
@@ -12,5 +11,4 @@ basic.forever(function on_forever() {
         music.playTone(262, music.beat(BeatFraction.Whole))
         basic.pause(500)
     }
-    
 })
